@@ -1,9 +1,15 @@
 import RaceDetails from "@/components/RaceDetails";
 
-export default function RacePage({ params }: { params: { slug: string } }) {
+export default async function RacePage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+
   return (
     <main className="min-h-screen p-6">
-      <RaceDetails slug={params.slug} />
+      <RaceDetails slug={slug} />
     </main>
   );
 }
