@@ -1,6 +1,7 @@
 type RaceCardProps = {
   raceName: string;
   date: string;
+  raceDistance: string;
   predictedTime: string;
   actualTime: string;
   isPB?: boolean;
@@ -9,6 +10,7 @@ type RaceCardProps = {
 export default function RaceCard({
   raceName,
   date,
+  raceDistance,
   predictedTime,
   actualTime,
   isPB = false,
@@ -26,6 +28,9 @@ export default function RaceCard({
         </p>
         <p className="text-white">
           Actual: <strong>{actualTime}</strong>
+        </p>
+        <p className="text-white">
+          Distance: <strong>{raceDistance}</strong>
         </p>
       </div>
     </div>
