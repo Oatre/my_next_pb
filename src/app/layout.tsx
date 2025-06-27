@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
+/*const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
@@ -11,10 +11,14 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-});
+});*/
+/* Removing fonts for deploymet issues with Vercel, keeping them in for future reference */
+
+
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
