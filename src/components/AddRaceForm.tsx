@@ -1,15 +1,6 @@
 'use client';
 import { useState } from 'react';
-
-type RaceFormData = {
-  raceName: string;
-  date: string;
-  raceDistance: string;
-  predictedTime: string;
-  actualTime: string;
-  isPB: boolean;
-  shoes: string;
-};
+import { RaceFormData } from '@/types/race';
 
 type AddRaceFormProps = {
   onSubmit: (data: RaceFormData) => void;

@@ -2,13 +2,15 @@
 import { useState } from "react";
 import RaceCard from "@/components/RaceCard";
 import AddRaceForm from "@/components/AddRaceForm";
+import { RaceFormData } from "@/types/race";
 import Link from "next/link";
 import { races } from "@/data/races";
+
 
 export default function Home() {
   const [showForm, setShowForm] = useState(false);
 
-  const handleAddRace = (raceData: any) => {
+  const handleAddRace = (raceData: RaceFormData) => {
     console.log("New race:", raceData);
     setShowForm(false);
     // Todo: add logic to actually save the race data
