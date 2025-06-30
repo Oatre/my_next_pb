@@ -40,9 +40,9 @@ export const races = {
 export type Race = {
   raceName: string;
   date: string;
-  raceDistance: string;
-  predictedTime: string;
-  actualTime: string;
+  raceDistance: number;
+  predictedTime: number;
+  actualTime: number;
   isPB: boolean;
   shoes: string;
 };
