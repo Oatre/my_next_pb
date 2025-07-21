@@ -47,7 +47,10 @@ export default function AddRaceForm({ onSubmit, onCancel }: AddRaceFormProps) {
         placeholder="Distance (e.g., 5K, 10K)"
         value={formData.raceDistance}
         onChange={(e) =>
-          setFormData({ ...formData, raceDistance: e.target.value })
+          setFormData({
+            ...formData,
+            raceDistance: Number(e.target.value) || 0,
+          })
         }
         className="w-full p-2 border rounded"
         required
@@ -58,7 +61,10 @@ export default function AddRaceForm({ onSubmit, onCancel }: AddRaceFormProps) {
         placeholder="Predicted Time (e.g., 22:30)"
         value={formData.predictedTime}
         onChange={(e) =>
-          setFormData({ ...formData, predictedTime: e.target.value })
+          setFormData({
+            ...formData,
+            predictedTime: Number(e.target.value) || 0,
+          })
         }
         className="w-full p-2 border rounded"
         required
@@ -69,7 +75,7 @@ export default function AddRaceForm({ onSubmit, onCancel }: AddRaceFormProps) {
         placeholder="Actual Time (e.g., 21:45)"
         value={formData.actualTime}
         onChange={(e) =>
-          setFormData({ ...formData, actualTime: e.target.value })
+          setFormData({ ...formData, actualTime: Number(e.target.value) || 0 })
         }
         className="w-full p-2 border rounded"
         required
