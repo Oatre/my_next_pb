@@ -6,6 +6,9 @@
 }
 
 :root {
+  --background: oklch(60% 0.118 184.704); /* Teal 600 from tailwind docs */
+  --foreground: #171717;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   /*--font-sans: var(--font-geist-sans); 

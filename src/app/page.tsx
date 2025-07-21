@@ -25,7 +25,7 @@ export default function Home() {
       <div className="flex justify-center mb-6">
         <button
           onClick={() => setShowForm(true)}
-          className="bg-gray-500 text-white px-4 py-2 rounded shadow hover:bg-gray-600"
+          className="bg-teal-800 text-white border border-teal-950 px-4 py-2 rounded shadow hover:bg-teal-600"
         >
           Add Race
         </button>

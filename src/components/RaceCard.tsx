@@ -16,7 +16,7 @@ export default function RaceCard({
   isPB = false,
 }: RaceCardProps) {
   return (
-    <div className="bg-gray-500 border border-gray-200 rounded-lg p-4 shadow-sm">
+    <div className="bg-teal-800 border border-teal-950 rounded-lg p-4 shadow-sm">
       <div className="flex justify-between items-center mb-1">
         <h2 className="text-lg font-bold text-white">{raceName}</h2>
         {isPB && <span className="text-yellow-500 text-lg">🥇</span>}
