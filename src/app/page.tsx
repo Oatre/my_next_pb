@@ -6,7 +6,6 @@ import { RaceFormData } from "@/types/race";
 import Link from "next/link";
 import { races } from "@/data/races";
 
-
 export default function Home() {
   const [showForm, setShowForm] = useState(false);
 
@@ -57,7 +56,6 @@ export default function Home() {
               raceDistance={race.raceDistance}
               predictedTime={race.predictedTime}
               actualTime={race.actualTime}
-              isPB={race.isPB}
             />
           </Link>
         ))}
