@@ -1,3 +1,8 @@
+My Next PB is supposed to be a digital "trophy" collection of completed races, so you can have clean overview over all races attended.
+Core functionalities to be added:
+- Add races manually with the race name, date for the race, your predicted time and your goal time
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
