@@ -1,9 +1,30 @@
 // Simple script to calculate times correctly from input
-// Converts MM:SS form input into seconds, function will be used for comparing different results etc.
+// Converts HH:MM:SS form input into seconds, function will be used for comparing different results etc.
 
-function timeToSeconds(timeStr) {
-  const [minutes, seconds] = timeStr.split(":").map(Number);
-  return minutes * 60 + seconds;
+export function timeToSeconds(timeStr) {
+  const parts = timeStr.split(":");
+
+  if (parts.length === 3) {
+    // HH:MM:SS format
+    const [hours, minutes, seconds] = parts.map(Number);
+    return hours * 3600 + minutes * 60 + seconds;
+  } else if (parts.length === 2) {
+    // MM:SS format (fallback)
+    const [minutes, seconds] = parts.map(Number);
+    return minutes * 60 + seconds;
+  }
+
+  return 0; // Invalid format
+}
+
+export function secondsToTimeString(totalSeconds) {
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+
+  return `${hours.toString().padStart(2, "0")}:${minutes
+    .toString()
+    .padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
 }
 
 // Test cases

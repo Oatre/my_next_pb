@@ -1,3 +1,5 @@
+import { secondsToTimeString } from "@/utils/timeUtils";
+
 type RaceCardProps = {
   raceName: string;
   date: string;
@@ -24,10 +26,10 @@ export default function RaceCard({
       <p className="text-sm text-white">{date}</p>
       <div className="mt-2 text-sm space-y-1">
         <p className="text-white">
-          Predicted: <strong>{predictedTime}</strong>
+          Predicted: <strong>{secondsToTimeString(predictedTime)}</strong>
         </p>
         <p className="text-white">
-          Actual: <strong>{actualTime}</strong>
+          Actual: <strong>{secondsToTimeString(actualTime)}</strong>
         </p>
         <p className="text-white">
           Distance: <strong>{raceDistance}</strong>
