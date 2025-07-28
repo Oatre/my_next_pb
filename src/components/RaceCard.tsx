@@ -3,9 +3,9 @@ import { secondsToTimeString } from "@/utils/timeUtils";
 type RaceCardProps = {
   raceName: string;
   date: string;
-  raceDistance: string;
-  predictedTime: string;
-  actualTime: string;
+  raceDistance: number;
+  predictedTime: number;
+  actualTime: number;
   isPB?: boolean;
 };
 
@@ -26,13 +26,19 @@ export default function RaceCard({
       <p className="text-sm text-white">{date}</p>
       <div className="mt-2 text-sm space-y-1">
         <p className="text-white">
-          Predicted: <strong>{secondsToTimeString(predictedTime)}</strong>
+          Predicted:{" "}
+          <strong>
+            {predictedTime > 0 ? secondsToTimeString(predictedTime) : "Not set"}
+          </strong>
         </p>
         <p className="text-white">
-          Actual: <strong>{secondsToTimeString(actualTime)}</strong>
+          Actual:{" "}
+          <strong>
+            {actualTime > 0 ? secondsToTimeString(actualTime) : "Not set"}
+          </strong>
         </p>
         <p className="text-white">
-          Distance: <strong>{raceDistance}</strong>
+          Distance: <strong>{raceDistance} km </strong>
         </p>
       </div>
     </div>
