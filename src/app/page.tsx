@@ -2,17 +2,20 @@
 import { useState } from "react";
 import RaceCard from "@/components/RaceCard";
 import AddRaceForm from "@/components/AddRaceForm";
-import { RaceFormData } from "@/types/race";
+import { RaceFormData, Race } from "@/types/race";
 import Link from "next/link";
 import { races } from "@/data/races";
 
 export default function Home() {
   const [showForm, setShowForm] = useState(false);
+  const [userRaces, setUserRaces] = useState <Race[]>([]);
 
   const handleAddRace = (raceData: RaceFormData) => {
     console.log("New race:", raceData);
     setShowForm(false);
     // Todo: add logic to actually save the race data
+    setUserRaces(prev => [...prev, raceData]);
+    setShowForm(false);
   };
 
   return (
@@ -43,7 +46,24 @@ export default function Home() {
         </div>
       )}
 
+      
+
       <section className="max-w-2xl mx-auto space-y-4">
+        {userRaces.map((race, index)=> (
+          <div key={`user-race-${index}`} className="border-1-4 border-green-400 p1-2">
+            <RaceCard
+            raceName={race.raceName}
+            date={race.date}
+            raceDistance={race.raceDistance}
+            predictedTime={race.predictedTime}
+            actualTime={race.actualTime}
+            isPB={race.isPB}
+            />
+          </div>
+        ))}
+
+
+        {/* Static Races, from races.ts - example data*/}
         {Object.entries(races).map(([slug, race]) => (
           <Link
             key={slug}
