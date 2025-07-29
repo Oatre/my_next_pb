@@ -14,6 +14,8 @@ export default function Home() {
     console.log("New race:", raceData);
     setShowForm(false);
     // Todo: add logic to actually save the race data
+    // Form works, displays a RaceCard, however it is not clickable like the static RaceCards.
+    // Going into a static RaceCard and back removes the added RaceCard.
     setUserRaces(prev => [...prev, raceData]);
     setShowForm(false);
   };
@@ -47,10 +49,10 @@ export default function Home() {
       )}
 
       
-
+      {/*Form-added Races*/}
       <section className="max-w-2xl mx-auto space-y-4">
         {userRaces.map((race, index)=> (
-          <div key={`user-race-${index}`} className="border-1-4 border-green-400 p1-2">
+          <div key={`user-race-${index}`} className="border-1-4 border-green-400 p1-2"> 
             <RaceCard
             raceName={race.raceName}
             date={race.date}
@@ -59,6 +61,7 @@ export default function Home() {
             actualTime={race.actualTime}
             isPB={race.isPB}
             />
+            
           </div>
         ))}
 
