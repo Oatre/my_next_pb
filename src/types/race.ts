@@ -9,6 +9,7 @@ export type RaceFormData = {
 };
 
 export type Race = {
+  id?: string;
   raceName: string;
   date: string;
   raceDistance: number;

@@ -45,6 +45,18 @@ export default function AddRaceForm({ onSubmit, onCancel }: AddRaceFormProps) {
     onSubmit(formData);
   };
 
+  const fillTestData = () => {
+    setFormData({
+      raceName: "Test run",
+      date: new Date().toISOString().split('T')[0],
+      raceDistance: 5,
+      predictedTime: timeToSeconds("00:25:00"),
+      actualTime: timeToSeconds("24:30"),
+      isPB: false,
+      shoes: "Test shoes",
+    });
+  };
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <input
@@ -114,6 +126,15 @@ export default function AddRaceForm({ onSubmit, onCancel }: AddRaceFormProps) {
         className="w-full p-2 border rounded"
         required
       />
+      <div className="flex gap-2">
+        <button
+          type="button"
+          onClick={fillTestData}
+          className="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-yellow-600"
+        >
+          Fill Test Data
+        </button>
+      </div>
       <div className="flex gap-2">
         <button
           type="submit"
