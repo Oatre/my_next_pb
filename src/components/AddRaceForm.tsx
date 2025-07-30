@@ -130,7 +130,7 @@ export default function AddRaceForm({ onSubmit, onCancel }: AddRaceFormProps) {
         <button
           type="button"
           onClick={fillTestData}
-          className="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-yellow-600"
+          className="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:opacity-90"
         >
           Fill Test Data
         </button>
@@ -138,14 +138,14 @@ export default function AddRaceForm({ onSubmit, onCancel }: AddRaceFormProps) {
       <div className="flex gap-2">
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="bg-blue-500 text-white px-4 py-2 rounded hover:opacity-90"
         >
           Add Race
         </button>
         <button
           type="button"
           onClick={onCancel}
-          className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+          className="bg-gray-500 text-white px-4 py-2 rounded hover:opacity-90"
         >
           Cancel
         </button>
