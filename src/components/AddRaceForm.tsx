@@ -48,7 +48,7 @@ export default function AddRaceForm({ onSubmit, onCancel }: AddRaceFormProps) {
   const fillTestData = () => {
     setFormData({
       raceName: "Test run",
-      date: new Date().toISOString().split('T')[0],
+      date: new Date().toISOString().split("T")[0],
       raceDistance: 5,
       predictedTime: timeToSeconds("00:25:00"),
       actualTime: timeToSeconds("24:30"),

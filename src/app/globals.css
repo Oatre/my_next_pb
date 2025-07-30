@@ -28,3 +28,10 @@ body {
   color: var(--foreground);
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
 }
+.back-button-image {
+  background-image: url('/assets/leftArrow.png');
+}
+
+.back-button-image:hover {
+  background-image: url('/assets/leftArrowHover.png');
+}
