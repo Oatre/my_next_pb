@@ -7,7 +7,6 @@ import BackButton from "./backButton";
 export default function RaceDetails(props: { slug: string }) {
   const race = races[props.slug as keyof typeof races];
   const [notes, setNotes] = useState("");
-  const [isHovered, setIsHovered] = useState(false);
 
   if (!race) {
     return <div>Race not found</div>;
