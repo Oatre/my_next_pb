@@ -2,9 +2,7 @@
 import { useState } from "react";
 import { races } from "@/data/races";
 import { secondsToTimeString } from "@/utils/timeUtils";
-import Image from "next/image";
-import leftArrow from "@/assets/leftArrow.png";
-import leftArrowHover from "@/assets/leftArrowHover.png";
+import BackButton from "./backButton";
 
 export default function RaceDetails(props: { slug: string }) {
   const race = races[props.slug as keyof typeof races];
@@ -17,16 +15,10 @@ export default function RaceDetails(props: { slug: string }) {
 
   return (
     <div>
-      {/* Header with back button #005f5a */}
+      {/* Header*/}
       <div className="max-w-2x3 mx-auto mb-6">
         <div className="flex items-center justify-between">
-          <button
-            onClick={() => window.history.back()}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          >
-            <Image alt="Back" src={isHovered ? leftArrowHover : leftArrow} />
-          </button>
+          <BackButton />
           <h1 className="text-lg font-bold text-white flex-1 text-center">
             Race Details for {race.raceName}
           </h1>
