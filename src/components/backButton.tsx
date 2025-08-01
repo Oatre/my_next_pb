@@ -12,7 +12,7 @@ export default function BackButton() {
       onClick={() => window.history.back()}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="bg-teal-600 text-white px-1 py-1 rounded hover:bg-teal-500"
+      className="bg-teal-600 text-white px-1 py-1 rounded"
     >
       <Image alt="Back" src={isHovered ? leftArrowHover : leftArrow} />
     </button>
