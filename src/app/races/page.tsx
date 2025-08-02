@@ -5,6 +5,7 @@ import AddRaceForm from "@/components/AddRaceForm";
 import { RaceFormData, Race } from "@/types/race";
 import Link from "next/link";
 import { races } from "@/data/races";
+import BackButton from "@/components/backButton";
 
 export default function RacesPage() {
   const [showForm, setShowForm] = useState(false);
@@ -27,6 +28,9 @@ export default function RacesPage() {
   return (
     <main className="min-h-screen p-6">
       <h1 className="text-4xl font-bold text-center text-white mb-8">
+        <div className="flex items-center justify-between">
+          <BackButton />
+        </div>
         My Next PB
       </h1>
 
@@ -93,6 +97,7 @@ export default function RacesPage() {
           </Link>
         ))}
       </section>
+      
     </main>
   );
 }

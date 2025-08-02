@@ -17,7 +17,7 @@ export default function RaceDetails(props: { slug: string }) {
       {/* Header*/}
       <div className="max-w-2x3 mx-auto mb-6">
         <div className="flex items-center justify-between">
-          <BackButton />
+          <BackButton/>
           <h1 className="text-lg font-bold text-white flex-1 text-center">
             Race Details for {race.raceName}
           </h1>
