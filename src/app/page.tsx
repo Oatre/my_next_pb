@@ -25,7 +25,7 @@ export default function Home() {
               {/* Backdrop overlay with blur */}
               <div
                 className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40"
-                onClick={() => setIsAboutOpen(false)} // Close when clicking backdrop
+                onClick={() => setIsAboutOpen(false)}
               />
 
               {/* Popup centered on screen */}
