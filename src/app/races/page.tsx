@@ -27,11 +27,11 @@ export default function RacesPage() {
 
   return (
     <main className="min-h-screen p-6">
-      <h1 className="text-4xl font-bold text-center text-white mb-8">
+      <h1 className="text-2xl font-bold text-center text-white mb-6">
         <div className="flex items-center justify-between">
           <BackButton />
         </div>
-        My Next PB
+        Overview of Your Races
       </h1>
 
       <div className="flex justify-center mb-6">
