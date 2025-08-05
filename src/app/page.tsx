@@ -6,7 +6,7 @@ export default function Home() {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
   return (
     <main className="min-h-screen p-6">
-      {/* Header with title and popup side by side */}
+      {/* Header*/}
       <div className="flex items-center justify-center gap-4 mb-8">
         <h1 className="text-4xl font-bold text-white">My Next PB</h1>
 
@@ -14,12 +14,12 @@ export default function Home() {
           {/* Button to toggle popup */}
           <button
             onClick={() => setIsAboutOpen(!isAboutOpen)}
-            className="bg-teal-800 rounded-2xl px-4 py-2 text-sm text-white hover:bg-teal-700 hover:duration-300 cursor-pointer"
+            className="bg-teal-800 rounded-2xl px-4 py-2 text-sm text-white font-bold transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-teal-700 hover:duration-300 cursor-pointer"
           >
             About
           </button>
 
-          {/* Backdrop and Popup - only show when isAboutOpen is true */}
+          {/*Modal*/}
           {isAboutOpen && (
             <>
               {/* Backdrop overlay with blur */}
@@ -33,8 +33,9 @@ export default function Home() {
                 <div className="bg-white rounded-2xl w-80 text-gray-600 p-6 shadow-xl border">
                   <h3 className="font-bold mb-2 text-xl">About My Next PB</h3>
                   <p className="mb-6">
-                    Track your races, show off medals, personal bests and more.
-                    Set goals and achieve your next personal best. More to come.
+                    All data is either static or mock at current time. Track your
+                    races, show off medals, personal bests and more. Set goals
+                    and achieve your next personal best.
                   </p>
 
                   <button

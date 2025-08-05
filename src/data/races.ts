@@ -1,4 +1,5 @@
-import { timeToSeconds } from "@/utils/timeUtils"
+import { timeToSeconds } from "@/utils/timeUtils";
+
 
 export const races = {
   "5k-parkrun": {
@@ -14,8 +15,8 @@ export const races = {
     raceName: "10K Spring Dash",
     date: "07-05-2025",
     raceDistance: 10,
-    predictedTime: 0,
-    actualTime: 0,
+    predictedTime: timeToSeconds("01:01:32"),
+    actualTime: timeToSeconds("00:58:03"),
     //isPB: false,
     shoes: "Saucony Endorphin Pro 4",
   },
@@ -23,17 +24,17 @@ export const races = {
     raceName: "Oslo Half Marathon",
     date: "21-09-2025",
     raceDistance: 21.1,
-    predictedTime: 0,
-    actualTime: 0,
+    predictedTime: timeToSeconds("02:09:17"),
+    actualTime: timeToSeconds("02:21:58"),
     //isPB: false,
     shoes: "Saucony Ride 17",
   },
-  "trondheim-21k": {
+  "trondheim-42k": {
     raceName: "Trondheim Half Marathon",
     date: "13-07-2025",
-    raceDistance: 21.1,
-    predictedTime: 0,
-    actualTime: 0,
+    raceDistance: 42.2,
+    predictedTime: timeToSeconds("05:45:00"),
+    actualTime: timeToSeconds("05:43:29"),
     //isPB: true,
     shoes: "Saucony Ride 17",
   },
