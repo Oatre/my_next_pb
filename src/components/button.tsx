@@ -11,8 +11,8 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const baseStyles = "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors"
     
     const variants = {
-      default: "bg-blue-500 text-white hover:bg-blue-600",
-      outline: "border border-gray-300 bg-white hover:bg-gray-50"
+      default: "bg-teal-600 text-white hover:bg-teal-500 dark:bg-blue-600 dark:hover:bg-blue-700",
+      outline: "border border-teal-700 bg-white hover:bg-teal-50 text-teal-900 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100 dark:hover:bg-gray-700"
     }
     
     const sizes = {
