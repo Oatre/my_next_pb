@@ -1,37 +1,23 @@
 @import "tailwindcss";
 
+
+
+@layer base {}
 :root {
-  --background: #2e2d2d;
-  --foreground: #171717;
+  
+
 }
-
-:root {
-  --background: oklch(60% 0.118 184.704); /* Teal 600 from tailwind docs */
-  --foreground: #171717;
-
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  /*--font-sans: var(--font-geist-sans); 
-  --font-mono: var(--font-geist-mono);*/
-  --font-montserrat: var(--font-montserrat);
-}
-
-/*@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}*/
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-montserrat), Arial, Helvetica, sans-serif;
 }
+
 .back-button-image {
-  background-image: url('/assets/leftArrow.png');
+  background-image: url("/assets/leftArrow.png");
 }
 
 .back-button-image:hover {
-  background-image: url('/assets/leftArrowHover.png');
+  background-image: url("/assets/leftArrowHover.png");
 }

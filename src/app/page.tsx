@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useState } from "react";
+import { ModeToggle } from "@/components/ModeToggle";
 
 export default function Home() {
   const [isAboutOpen, setIsAboutOpen] = useState(false);
@@ -18,6 +19,7 @@ export default function Home() {
           >
             About
           </button>
+          <ModeToggle/>
 
           {/*Modal*/}
           {isAboutOpen && (
@@ -33,9 +35,9 @@ export default function Home() {
                 <div className="bg-white rounded-2xl w-80 text-gray-600 p-6 shadow-xl border">
                   <h3 className="font-bold mb-2 text-xl">About My Next PB</h3>
                   <p className="mb-6">
-                    All data is either static or mock at current time. Track your
-                    races, show off medals, personal bests and more. Set goals
-                    and achieve your next personal best.
+                    All data is either static or mock at current time. Track
+                    your races, show off medals, personal bests and more. Set
+                    goals and achieve your next personal best.
                   </p>
 
                   <button
