@@ -5,6 +5,9 @@ Core functionalities to be added:
 - Get an overview over personal bests
 
 
+**First iteration of dark mode, currently just based on browser theme and only background. Button is not styled properly. Other components are not affected by light/dark/system setting, just the background, will work out fixes for the other things**
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
