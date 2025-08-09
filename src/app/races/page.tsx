@@ -31,7 +31,7 @@ export default function RacesPage() {
         <div className="flex items-center justify-between">
           <BackButton />
         </div>
-        Overview of Your Races
+        🏃 Overview of Your Races
       </h1>
 
       <div className="flex justify-center mb-6">
