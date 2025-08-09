@@ -1,89 +1,39 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
+import { Moon, Sun } from "lucide-react"
+import { useTheme } from "next-themes"
+import { Button } from "@/components/button"
 
-export function DropdownMenu({ children }: { children: React.ReactNode }) {
-  const [open, setOpen] = React.useState(false);
+export function ModeToggle() {
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
 
-  return (
-    <div className="relative inline-block text-left">
-      {React.Children.map(children, (child) =>
-        React.isValidElement(child)
-          ? React.cloneElement(
-              child as React.ReactElement<{
-                open: boolean;
-                setOpen: (open: boolean) => void;
-              }>,
-              { open, setOpen }
-            )
-          : child
-      )}
-    </div>
-  );
-}
+  // Avoid hydration mismatch
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
 
-export function DropdownMenuTrigger({
-  asChild,
-  children,
-  open,
-  setOpen,
-}: {
-  asChild?: boolean;
-  children: React.ReactNode;
-  open?: boolean;
-  setOpen?: (open: boolean) => void;
-}) {
-  const handleClick = () => setOpen?.(!open);
-
-  if (asChild && React.isValidElement(children)) {
-    return React.cloneElement(
-      children as React.ReactElement<{ onClick: () => void }>,
-      { onClick: handleClick }
-    );
+  if (!mounted) {
+    return (
+      <Button variant="outline" size="icon">
+        <Sun className="h-[1.2rem] w-[1.2rem]" />
+      </Button>
+    )
   }
 
-  return <button onClick={handleClick}>{children}</button>;
-}
-
-export function DropdownMenuContent({
-  align = "center",
-  children,
-  open,
-}: {
-  align?: "start" | "center" | "end";
-  children: React.ReactNode;
-  open?: boolean;
-}) {
-  if (!open) return null;
-
-  const alignmentClasses = {
-    start: "left-0",
-    center: "left-1/2 -translate-x-1/2",
-    end: "right-0",
-  };
+  const toggleTheme = () => {
+    setTheme(theme === "dark" ? "light" : "dark")
+  }
 
   return (
-    <div
-      className={`absolute top-full mt-1 ${alignmentClasses[align]} min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md z-50`}
-    >
-      {children}
-    </div>
-  );
-}
-
-export function DropdownMenuItem({
-  children,
-  onClick,
-}: {
-  children: React.ReactNode;
-  onClick?: () => void;
-}) {
-  return (
-    <div
-      className="relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50"
-      onClick={onClick}
-    >
-      {children}
-    </div>
-  );
+    <Button variant="outline" size="icon" onClick={toggleTheme}>
+      {theme === "dark" ? (
+        <Moon className="h-[1.2rem] w-[1.2rem]" />
+      ) : (
+        <Sun className="h-[1.2rem] w-[1.2rem]" />
+      )}
+      <span className="sr-only">Toggle theme</span>
+    </Button>
+  )
 }
